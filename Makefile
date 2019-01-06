@@ -8,5 +8,6 @@ BOARD_TAG = mega
 BOARD_SUB = atmega2560
 #TARGET = Uberprachtige-KBS-game
 MONITOR_BAUDRATE = 500000
+CPPFLAGS += -save-temps=obj
 
 include $(ARDMK_DIR)/Arduino.mk
