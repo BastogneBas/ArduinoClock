@@ -1,0 +1,46 @@
+-------------------------
+Arduino.mk Configuration:
+- [AUTODETECTED]       CURRENT_OS = LINUX 
+- [USER]               ARDUINO_DIR = /home/bas/arduino 
+- [USER]               ARDMK_DIR = /home/bas/Arduino-Makefile 
+- [AUTODETECTED]       ARDUINO_VERSION = 187 
+- [DEFAULT]            ARCHITECTURE = avr 
+- [USER]               ARDMK_VENDOR = arduino 
+- [AUTODETECTED]       ARDUINO_PREFERENCES_PATH = /home/bas/.arduino15/preferences.txt 
+- [AUTODETECTED]       ARDUINO_SKETCHBOOK = /home/bas/sketchbook (from arduino preferences file)
+- [COMPUTED]           ARDUINO_VAR_PATH = /home/bas/arduino/hardware/arduino/avr/variants (from ARDUINO_DIR)
+- [COMPUTED]           BOARDS_TXT = /home/bas/arduino/hardware/arduino/avr/boards.txt (from ARDUINO_DIR)
+- [BUNDLED]            AVR_TOOLS_DIR = /home/bas/arduino/hardware/tools/avr (in Arduino distribution)
+- [COMPUTED]           ARDUINO_LIB_PATH = /home/bas/arduino/libraries (from ARDUINO_DIR)
+- [COMPUTED]           ARDUINO_PLATFORM_LIB_PATH = /home/bas/arduino/hardware/arduino/avr/libraries (from ARDUINO_DIR)
+- [DEFAULT]            USER_LIB_PATH = /home/bas/sketchbook/libraries (in user sketchbook)
+- [DEFAULT]            PRE_BUILD_HOOK = pre-build-hook.sh 
+- [USER]               BOARD_SUB = atmega2560 
+- [USER]               BOARD_TAG = mega 
+- [COMPUTED]           CORE = arduino (from build.core)
+- [COMPUTED]           VARIANT = mega (from build.variant)
+- [COMPUTED]           OBJDIR = build-mega-atmega2560 (from BOARD_TAG)
+- [COMPUTED]           ARDUINO_CORE_PATH = /home/bas/arduino/hardware/arduino/avr/cores/arduino (from ARDUINO_DIR, BOARD_TAG and boards.txt)
+-                      No .pde or .ino files found. If you are compiling .c or .cpp files then you need to explicitly include Arduino header files
+-  [USER]              MONITOR_BAUDRATE = 500000 
+- [DEFAULT]            OPTIMIZATION_LEVEL = s 
+- [DEFAULT]            MCU_FLAG_NAME = mmcu 
+- [DEFAULT]            CFLAGS_STD = -std=gnu11 
+- [DEFAULT]            CXXFLAGS_STD = -std=gnu++11 
+- [AUTODETECTED]       DEVICE_PATH = /dev/ttyACM0 
+- [DEFAULT]            FORCE_MONITOR_PORT =  
+- [AUTODETECTED]       Size utility: AVR-aware for enhanced output
+- [COMPUTED]           BOOTLOADER_PARENT = /home/bas/arduino/hardware/arduino/avr/bootloaders (from ARDUINO_DIR)
+- [COMPUTED]           ARDMK_VERSION = 1.6 
+- [COMPUTED]           CC_VERSION = 5.4.0 (avr-gcc)
+- [COMPUTED]           CPPFLAGS = -D__PROG_TYPES_COMPAT__ -save-temps=obj -mmcu=atmega2560 -DF_CPU=16000000L -DARDUINO=187 -DARDUINO_ARCH_AVR -I/home/bas/arduino/hardware/arduino/avr/cores/arduino -I/home/bas/arduino/hardware/arduino/avr/variants/mega    -Wall -ffunction-sections -fdata-sections -Os 
+-------------------------
+mkdir -p build-mega-atmega2560
+make reset
+make[1]: Entering directory '/home/bas/Dokumentoj/ArduinoClock'
+/home/bas/Arduino-Makefile/bin/ard-reset-arduino  /dev/ttyACM0
+make[1]: Leaving directory '/home/bas/Dokumentoj/ArduinoClock'
+make do_upload
+make[1]: Entering directory '/home/bas/Dokumentoj/ArduinoClock'
+/home/bas/arduino/hardware/tools/avr/bin/avrdude -q -V -p atmega2560 -C /home/bas/arduino/hardware/tools/avr/etc/avrdude.conf -D -c wiring -b 115200 -P /dev/ttyACM0 \
+		-U flash:w:build-mega-atmega2560/ArduinoClock.hex:i

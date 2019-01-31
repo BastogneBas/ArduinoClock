@@ -1,4 +1,6 @@
+#include <avr/io.h>
+
 int main()
 {
-	int i = 0;
+	DDRD = 0;
 }
